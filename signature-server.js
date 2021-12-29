@@ -8,7 +8,7 @@ dotenv.config();
 var faunadb = require('faunadb');
 var q = faunadb.query;
 var adminClient = new faunadb.Client({
-    secret: process.env.REACT_APP_FAUNA_KEY
+    secret: process.env.REACT_APP_FAUNA_SIGN_KEY
 });
 
 // adminClient.query(
