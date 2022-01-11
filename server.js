@@ -39,7 +39,7 @@ router.param('tokenId', async function (req, res, next, tokenId) {
 
     await getTotalSupply();
     
-    if (parseInt(tokenId) <= parseInt(totalSupply)) {
+    if (parseInt(tokenId) < parseInt(totalSupply)) {
         console.log("Verified successfully");
         next();
     } else {
@@ -49,7 +49,7 @@ router.param('tokenId', async function (req, res, next, tokenId) {
 
 });
 
-router.get('/Metadata/:tokenId', function (req, res) {
+router.get('/Ramen/:tokenId', function (req, res) {
   //console.log(req.params.tokenId)
   adminClient.query(
     q.Get(q.Ref(q.Collection('Metadata'), String(req.params.tokenId)))
